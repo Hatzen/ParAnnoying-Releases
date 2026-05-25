@@ -1,0 +1,48 @@
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/dialogRootLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@id/dialogContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:text="Unknown OnlineID:"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="16sp"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@id/name"
+            android:text="Name"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="16sp"
+            android:layout_margin="8dp"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@id/dialogDividerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="@dimen/dialog_divider_margin_left"
+        android:paddingStart="@dimen/dialog_divider_margin_left">
+
+        <View
+            android:id="@id/dialogDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dialog_divider"/>
+    </FrameLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

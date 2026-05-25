@@ -1,0 +1,7 @@
+You need two devices per user. The online device may be reused for sendind messages but in general you better have your own device for controlling.
+One device which can be your casual device using for every day use which has an internet connection and another one which will NEVER be connected to the internet as long as you use this messenger.
+You need to install the app on both devices and remove internet connection on the second one as soon as you want to pick the offline role.
+Also both android devices need a camera, nfc or bluetooth to share data between them.
+These devices need to have Android Jeally Bean (4.4) and a 8 mega pixel camera (for large messages u might need a better camera), nfc or bluetooth.
+Camera is the preferred channel, nfc is ok but bluetooth should not be used as it is easier to be hacked and transfer much data a trojan could use.
+So many old devices can be recycled for that purpose!

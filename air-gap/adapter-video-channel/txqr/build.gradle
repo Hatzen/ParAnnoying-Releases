@@ -1,0 +1,3 @@
+// https://stackoverflow.com/a/70074787/8524651
+configurations.maybeCreate("default")
+artifacts.add("default", file('txqr.aar'))

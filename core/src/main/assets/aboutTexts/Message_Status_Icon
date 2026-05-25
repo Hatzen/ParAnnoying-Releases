@@ -1,0 +1,7 @@
+There are icon on messages indicating the technical known informations.
+<b>Check</b>
+The Message you sent got confirmed with a message from the other device.
+<b>Questionmark</b>
+The Status of your sent message is not known.
+<b>Exclamationmark</b>
+The Message did not get confirmed but a message you sent after that one, so probably this message wasnt received by the other device.

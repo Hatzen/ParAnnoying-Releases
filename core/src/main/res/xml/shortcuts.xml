@@ -1,0 +1,16 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- replace with about shortcut add dynamic ones for settings, and the current 2 ones -->
+    <shortcut
+        android:shortcutId="shortcut_about"
+        android:enabled="true"
+        android:icon="@mipmap/info"
+        android:shortcutShortLabel="@string/short_shortcut_about"
+        android:shortcutLongLabel="@string/long_shortcut_about">
+        <intent
+            android:action="de.hartz.software.parannoying.ACTION_ABOUT"
+            android:targetClass="de.hartz.software.parannoying.core.activities.insecured.wiki.AboutActivity" >
+        </intent>
+        <categories android:name="android.shortcut.shortcut" />
+    </shortcut>
+
+</shortcuts>

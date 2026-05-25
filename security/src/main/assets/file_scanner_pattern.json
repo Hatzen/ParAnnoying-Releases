@@ -1,0 +1,156 @@
+[
+  {
+    "id": "PR001",
+    "name": "Shell Metacharacters",
+    "description": "File contains shell metacharacters like < > | & ; ` $",
+    "pattern": "[<>|&;`$]",
+    "severity": 50
+  },
+  {
+    "id": "PR002",
+    "name": "Multiple Null Bytes",
+    "description": "File contains 5 or more consecutive null bytes",
+    "pattern": "\\x00{5,}",
+    "severity": 60
+  },
+  {
+    "id": "PR003",
+    "name": "Unicode RTL Override",
+    "description": "File contains RTL override character which can hide real file extension",
+    "pattern": "\\u202e",
+    "severity": 80
+  },
+  {
+    "id": "PR004",
+    "name": "Long Base64 Strings",
+    "description": "File contains suspiciously long Base64-encoded strings",
+    "pattern": "[A-Za-z0-9+/=]{100,}",
+    "severity": 40
+  },
+  {
+    "id": "PR005",
+    "name": "SQL/Script Injection Keywords",
+    "description": "Possible SQL or script injection keywords found",
+    "pattern": "(--|;|\\bUNION\\b|\\bSELECT\\b|\\bDROP\\b|\\bINSERT\\b).*",
+    "severity": 60
+  },
+  {
+    "id": "PR006",
+    "name": "Hex or Unicode Escapes",
+    "description": "Hex or Unicode escape sequences found",
+    "pattern": "(\\\\x[0-9a-fA-F]{2}|\\\\u[0-9a-fA-F]{4})",
+    "severity": 50
+  },
+  {
+    "id": "PR007",
+    "name": "Command Execution Keywords",
+    "description": "Contains suspicious commands like wget, bash, powershell etc.",
+    "pattern": "\\b(wget|curl|bash|chmod|rm -rf|powershell|Invoke-WebRequest|Base64ToString|eval|exec|system)\\b",
+    "severity": 60
+  },
+  {
+    "id": "PR008",
+    "name": "Unicode Control Characters",
+    "description": "File contains invisible or control characters",
+    "pattern": "[\\u007f-\\u009f]",
+    "severity": 30
+  },
+  {
+    "id": "PR009",
+    "name": "Fake File Extensions",
+    "description": "File name contains multiple extensions (e.g. .jpg.exe)",
+    "pattern": "\\.(jpg|png|gif)\\.(sh|dpkg|apk|exe)$",
+    "severity": 70
+  },
+  {
+    "id": "PR010",
+    "name": "Suspicious Combining Unicode",
+    "description": "Excessive use of combining characters (Zalgo text)",
+    "pattern": "[\\u0300-\\u036F]{3,}",
+    "severity": 50
+  },
+  {
+    "id": "PR011",
+    "name": "NOP Sled",
+    "description": "Classic NOP sled pattern in shellcode",
+    "pattern": "\\x90{20,}",
+    "severity": 70
+  },
+  {
+    "id": "PR012",
+    "name": "PE Header",
+    "description": "Windows executable signature (MZ header) found in text file",
+    "pattern": "^MZ",
+    "severity": 90
+  },
+  {
+    "id": "PR013",
+    "name": "PDF Encryption",
+    "description": "Encrypted stream in PDF detected",
+    "pattern": "/Encrypt\\s+\\d+\\s+\\d+\\s+R",
+    "severity": 70
+  },
+  {
+    "id": "PR014",
+    "name": "Long XML Tags",
+    "description": "Extremely long XML tag may indicate exploit attempt",
+    "pattern": "<[^>]{1000,}>",
+    "severity": 60
+  },
+  {
+    "id": "PR015",
+    "name": "Broken JSON",
+    "description": "Extremely large JSON block (DoS risk)",
+    "pattern": "\\{[^}]{5000,}",
+    "severity": 60
+  },
+  {
+    "id": "PR016",
+    "name": "Zero Width Space",
+    "description": "Invisible Unicode whitespace characters used for evasion",
+    "pattern": "\\u200B[B-D]",
+    "severity": 50
+  },
+  {
+    "id": "PR017",
+    "name": "Cyrillic Homoglyphs",
+    "description": "Cyrillic homoglyphs (used for phishing or evasion)",
+    "pattern": "[аеиорсх]",
+    "severity": 40
+  },
+  {
+    "id": "PR018",
+    "name": "PowerShell Payload",
+    "description": "Obfuscated PowerShell command detected",
+    "pattern": "powershell\\s+-[Ee]ncoded",
+    "severity": 80
+  },
+  {
+    "id": "PR019",
+    "name": "Command Injection Characters",
+    "description": "Command injection characters in input",
+    "pattern": "[;&|]",
+    "severity": 60
+  },
+  {
+    "id": "PR020",
+    "name": "Multiple File Extensions",
+    "description": "Multiple file extensions found (e.g. .docx.exe)",
+    "pattern": "\\.\\w+\\.\\w{2,4}$",
+    "severity": 50
+  },
+  {
+    "id": "PR021",
+    "name": "Obfuscated JavaScript",
+    "description": "Obfuscated script execution pattern",
+    "pattern": "eval\\((unescape|atob|decodeURIComponent)\\(",
+    "severity": 70
+  },
+  {
+    "id": "PR022",
+    "name": "Unusual High ASCII",
+    "description": "Long block of non-ASCII text (binary or encoded data)",
+    "pattern": "[^\\x00-\\x7F]{10,}",
+    "severity": 50
+  }
+]

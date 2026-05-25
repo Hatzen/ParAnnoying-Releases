@@ -1,0 +1,1 @@
+Color of user image indicates security issues, red users are considered insecure, green secure. Still a green user can be broken while a red might not be. It is just an indicator.

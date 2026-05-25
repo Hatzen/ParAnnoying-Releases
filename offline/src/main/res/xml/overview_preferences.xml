@@ -1,0 +1,31 @@
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- TODO: use -->
+    <Preference
+        app:key="channels"
+        app:summary="Setup channels for exchanging data"
+        app:title="Channels" />
+
+    <Preference
+        app:key="messages"
+        app:summary="Sync, obfusicate text and (keep encrypted files)"
+        app:title="Messages" />
+
+    <Preference
+        app:key="security"
+        app:summary="Additional ways to secure the app"
+        app:title="Security" />
+
+    <Preference
+        app:key="data"
+        app:summary="Share apk, export or clear data"
+        app:title="App data" />
+
+    <Preference
+        app:key="version"
+        app:title="Version" />
+
+    <Preference
+        app:key="feedback"
+        app:title="Feedback" />
+</androidx.preference.PreferenceScreen>

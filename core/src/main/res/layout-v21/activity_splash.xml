@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/splashBackground">
+
+        <!-- seems to need src for at least Android 14, otherwise no animation.. -->
+        <ImageView
+            android:id="@+id/animation_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorWhite"
+            android:src="@drawable/splashscreen"
+            app:srcCompat="@drawable/splashscreen"
+             />
+
+
+        <TextView
+            android:id="@+id/user_name_text_view"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Text"
+            android:visibility="gone"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

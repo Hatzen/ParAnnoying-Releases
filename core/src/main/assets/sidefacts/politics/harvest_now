@@ -1,0 +1,3 @@
+Time is just another vector. Harvest Now, Decrypt Later is a surveillance strategy where encrypted data is collected now — even if it can't be read yet — with the expectation that future advances in computing or cryptanalysis (like quantum computing) will allow decryption later. This means data considered secure today might be exposed tomorrow if weak encryption or old keys were used.
+
+Sensitive messages, location trails, contacts, or identities might be stored indefinitely by intelligence agencies, waiting for tech to catch up. This highlights the long-term value of strong encryption, frequent key rotation, and true end-to-end models with air-gapped safety.

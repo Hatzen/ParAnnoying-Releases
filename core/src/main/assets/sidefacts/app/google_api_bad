@@ -1,0 +1,1 @@
+Firebase Realtime Database can link data like messages to user IDs or pseudonyms, risking leaks of personal info. Since it's a Google service, metadata may be logged. Avoiding it reduces exposure and helps keep identities separate, especially in apps needing strong privacy without outside servers.

@@ -1,0 +1,16 @@
+In the current version there are some weaknesses which might get improved in future releases.
+
+- Currently the HMAC to provide authenticity is weak
+- Denial of service attacks are easy when using google api.
+  - Login information are static so can be used to steal messages so they never get received
+  - There is a limit of traffic as the app uses a free limit
+- Limited amount of generated keys per offline device
+- UserId exchange is limited to be secure when people meet each other
+- No verification if bluetooth partner is a valid ParAnnoying User
+- Hash algorithms needs to be verified
+- Bluetooth and NFC can be used to communicate in both directions and Security issues like stagefright can be used to hijack the offline device
+- The offline device might already have a trojan which is controlling connections without the user can do anything and is wrongly feeling safe
+- When downloading the apk it might get injected with malicious code and so might be useless. This is a considered practice for governments which abuse ISPs.
+The only solution is to compile open source code on your own
+- There is a lack of uniqueness of online ids especially those which are used without google api
+- All private data is loaded into ram. So attackers with root permissions could easily read. And performance might be an issue with long time usage.

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/welcomeHeading"
+        android:layout_margin="25dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="28sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/check_group"/>
+
+    <LinearLayout
+        android:id="@+id/check_group"
+        android:minWidth="300dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <!-- Programmatically include checkbox_white.xml
+
+        <CheckBox
+            android:visibility="gone"
+            android:id="@+id/check_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorWhite"
+            android:buttonTint="@color/colorWhite"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:text="Test123" /> -->
+    </LinearLayout>
+
+    <Button
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="Additional action"
+        android:id="@+id/additional_button"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/button_shape"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        android:textColor="@color/colorWhite"/>
+
+</LinearLayout>

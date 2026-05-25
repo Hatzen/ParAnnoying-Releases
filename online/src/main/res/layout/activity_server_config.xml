@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <!-- Server Type (Enum Dropdown) -->
+                <TextView
+                    android:text="Server Type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextAppearance.AppCompat.Medium"/>
+                <Spinner
+                    android:id="@+id/spinner_server_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <!-- Name -->
+                <TextView android:text="Name" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+                <EditText
+                    android:id="@+id/edit_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName" />
+
+                <!-- API Key -->
+                <TextView android:text="API Key" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+                <EditText
+                    android:id="@+id/edit_api_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+                <!-- App ID -->
+                <TextView android:text="App ID" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+                <EditText
+                    android:id="@+id/edit_app_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+                <!-- Database URL -->
+                <TextView android:text="Database URL" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+                <EditText
+                    android:id="@+id/edit_database_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textUri" />
+
+                <!-- Project ID -->
+                <TextView android:text="Project ID" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+                <EditText
+                    android:id="@+id/edit_project_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+                <!-- GCM Sender ID -->
+                <TextView android:text="GCM Sender ID" android:layout_height="wrap_content" android:layout_width="match_parent"/>
+                <EditText
+                    android:id="@+id/edit_gcm_sender_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+                <Button
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="Save"
+                    android:id="@+id/save"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/button_shape"
+                    android:scaleType="fitCenter"
+                    android:textColor="@color/colorWhite"/>
+
+                <Button
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:text="Insert prod config"
+                    android:id="@+id/inser_prod_config"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/button_shape"
+                    android:scaleType="fitCenter"
+                    android:textColor="@color/colorWhite"/>
+        </LinearLayout>
+</ScrollView>

@@ -1,0 +1,39 @@
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="Developer Settings. DO NOT USE!">
+
+        <CheckBoxPreference
+            app:title="Internet connection"
+            app:key="internet"
+            android:defaultValue="false"
+            android:summary="Allow active Internet connection" />
+
+        <CheckBoxPreference
+            app:title="Rooted device"
+            app:key="root"
+            android:defaultValue="false"
+            android:summary="Allow rooted device" />
+
+        <CheckBoxPreference
+            app:title="Screen capture"
+            app:key="screenshot"
+            android:defaultValue="false"
+            android:summary="Allow screenshots and screenrecoring" />
+
+        <CheckBoxPreference
+            app:title="Debugging Mode"
+            app:key="debugging"
+            android:defaultValue="false"
+            android:summary="Activate debugging mode" />
+        <Preference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:summary="Start airgap test activity"
+            app:key="airgap"
+            app:title="Airgap Test Activity" />
+
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

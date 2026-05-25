@@ -1,0 +1,13 @@
+apply plugin: 'com.android.library'
+
+apply from: '../baseConfig.gradle'
+apply from: '../baseUiDependencies.gradle'
+
+android {
+
+    namespace 'de.hartz.software.parannoying.fake.entry'
+}
+
+dependencies {
+    implementation project(':core')
+}

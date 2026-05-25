@@ -1,0 +1,4 @@
+Google API means that the app is using the Firebase Realtime Database API to deliver encrypted messages over the insecure internet connection.
+The name is simplified like that as Google might not be a trusted or available delivery option.
+Using it enables you to get realtime messaging for this app without using any other messenger.
+As this messenger is free to use there is a data limit which might be attacked or overused so it is probably not reliable all the time.

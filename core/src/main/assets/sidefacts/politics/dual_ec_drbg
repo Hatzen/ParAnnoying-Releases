@@ -1,0 +1,1 @@
+Dual_EC_DRBG was a random number generator once approved for encryption, but later found to likely contain a hidden backdoor by the NSA. If used, it could let attackers predict “secure” keys. Even official standards can be flawed on purpose. Choosing open, peer-reviewed cryptography helps avoid silent weaknesses baked in by design.

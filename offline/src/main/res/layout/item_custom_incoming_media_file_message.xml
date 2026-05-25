@@ -1,0 +1,95 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="4dp">
+
+    <TextView
+        android:id="@+id/messageSender"
+        android:text="MyNmae"
+        android:textSize="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.stfalcon.chatkit.utils.ShapeImageView
+        android:id="@id/dialogAvatar"
+        android:layout_below="@id/messageSender"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="16dp" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/dialogAvatar"
+        android:layout_below="@id/messageSender"
+        app:alignContent="stretch"
+        app:alignItems="stretch"
+        app:flexWrap="wrap"
+        app:justifyContent="flex_end">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipChildren="true"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:id="@id/bubble"
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@id/image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true"
+                    android:src="@mipmap/ic_launcher_foreground" />
+
+                <TextView
+                    android:id="@id/imageOverlay"
+                    android:shadowColor="@color/white"
+                    android:shadowRadius="5.0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#99aaaaaa"
+                    android:gravity="bottom|end"
+                    android:paddingEnd="5dp"
+                    android:paddingBottom="5dp"
+                    android:layout_alignBottom="@id/image"
+                    android:layout_alignEnd="@id/image"
+                    android:layout_alignLeft="@id/image"
+                    android:layout_alignRight="@id/image"
+                    android:layout_alignStart="@id/image"
+                    android:layout_alignTop="@id/image"
+                    android:text="x files"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@id/messageTime"
+                    android:text="hh:mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/image"
+                    android:layout_alignRight="@id/image"
+                    android:layout_below="@id/image"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </com.google.android.flexbox.FlexboxLayout>
+
+</RelativeLayout>

@@ -1,0 +1,4 @@
+Some modern surveillance tools can turn on a phone’s microphone without showing it’s recording.
+NSO Group’s Pegasus and similar tools exploit hardware-level functions, leaving no UI traces.
+Spyware like Pegasus can infect your phone via a missed call.
+Once inside, it can activate mic, camera, GPS — even read encrypted chats.

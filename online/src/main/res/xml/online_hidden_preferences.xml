@@ -1,0 +1,21 @@
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="Developer Settings. DO NOT USE! \n Enabling makes your device insecure">
+
+        <CheckBoxPreference
+            app:title="Developer Mode"
+            app:key="developer_mode"
+            android:defaultValue="false"
+            android:summary="Activate debugging mode which shows more toast and log output" />
+
+        <Preference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:summary="Start airgap test activity"
+            app:key="airgap"
+            app:title="Airgap Test Activity" />
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

@@ -1,0 +1,8 @@
+This app has exactly two device roles.
+<b>Online Device:</b>
+The device which is responsible for delivering encrypted messages only. This message simply gets a message via a chosen channel from the offline device. After it gots the message from your offline device it can deliver it either from the google api or you share it with your most common messenger were you now the other ParAnnyoing user can receive it and pass it to his offline device.
+Every online device creates an OnlineId after the onboarding which has to be connected to your very own offline device.
+<b>Offline device:</b>
+This device is your very secret. No one but you should know about it. You connect as many offline devices, which are not yours, together by scanning their offline ids.
+After getting known to each other the users get visible to your chat overview from where you can select any chat and write your message. After writing your message you need to send this message to your online device. There it will be delivered to the offline device of the other user who is known by you.
+He can scan the message on his online device via his offline device. There it will be decrypted an can be read by him. Afterwards he can answer you in the exact same way but backwards.

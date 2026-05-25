@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="your_username">Your username</string>
+    <string name="username">1. Enter your username</string>
+    <string name="no_messages">no messages</string>
+    <string name="no_chats">no chats</string>
+</resources>

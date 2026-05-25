@@ -1,0 +1,1 @@
+Excerpt from https://github.com/Hatzen/NFCSocket

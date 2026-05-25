@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- Get hardware id etc. -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <!-- https://stackoverflow.com/questions/34966133/android-bluetooth-discovery-doesnt-find-any-device -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+
+    <uses-permission android:name="android.permission.NFC" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- ggwave -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+
+    <application>
+
+        <activity
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:name="de.hartz.software.parannoying.air.gap.helpers.channels.bluetooth.DeviceListActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait" /> <!-- https://stackoverflow.com/questions/38200282/android-os-fileuriexposedexception-file-storage-emulated-0-test-txt-exposed -->
+
+        <activity
+            android:exported="true"
+            android:name="de.hartz.software.parannoying.air.gap.activities.dummy.DummyAirGapActivity"
+            android:label="AirGap Tester"
+            android:taskAffinity="de.hartz.software.parannoying.air.gap.activities.dummy.DummyAirGapActivity">
+            <intent-filter>
+                <!-- <category android:name="android.intent.category.DEFAULT"/> -->
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:exported="true"
+            android:name="de.hartz.software.parannoying.air.gap.activities.SharedDataRedirectActivity"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter android:label="Import QrCode">
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <!-- TODO: Does it work? -->
+            <intent-filter android:label="Import QrCodes">
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:exported="false"
+            android:name="de.hartz.software.parannoying.air.gap.activities.ReceiveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:exported="false"
+            android:name="de.hartz.software.parannoying.air.gap.activities.SendActivity"
+            android:screenOrientation="portrait"/>
+
+
+        <activity
+            android:exported="true"
+            android:name=".activities.dummy.NfcSenderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:exported="true"
+            android:name=".activities.dummy.NfcReaderActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Only send nfc messages with content and not only launching application -->
+        <meta-data android:name="android.nfc.disable_beam_default"
+            android:value="true"/>
+    </application>
+</manifest>

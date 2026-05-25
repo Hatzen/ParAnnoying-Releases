@@ -1,0 +1,7 @@
+Your userId is the part that identifies your offline device. It is your very secret and is not intended to be shared without cautions.
+If you leak your userId on the internet the chats with your chat partners can easily be attacked.
+When both userIds are leaked the whole communication can be decrypted when the messages are available too.
+Your UserId contains your nickname, a part of the symmetric key and an asymmetric key which are needed to identify yourself and encrypt the whole communication.
+The userId also contains your onlineId when you are using the google api, so the sent messages are directed to your online device.
+It is really important to keep this as a secret. Do not deliver it on any insecure channel also it is secured by a short passphrase when displayed.
+The securest option is to just share it via your camera when both chat partners are physically next to each other!

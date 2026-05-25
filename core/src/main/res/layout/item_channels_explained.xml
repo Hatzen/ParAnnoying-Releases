@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:emojiCompatEnabled="false"
+    android:padding="30dp">
+
+    <com.mikepenz.iconics.view.IconicsImageView
+        android:id="@+id/background_channel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/description"
+            android:text="The bluetooth channel connects two devices via bluetooth in a range of ca. 5m, both devices need bluetooth support and enabled the receiver needs to be discoverable. It is considered the leaast secure channel as it has a persistent connection to an other device."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textAlignment="center"
+            android:justificationMode="inter_word"
+            android:textSize="28sp">
+        </TextView>
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Usability"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:textSize="28sp"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/usabiliy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Security"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:textSize="28sp"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/security"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Throughput"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:textSize="28sp"/>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/throughput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

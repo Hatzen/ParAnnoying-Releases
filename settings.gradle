@@ -1,0 +1,26 @@
+include ':app', ':core', ':security', ':profilepicturegenerator'
+include ':online', ':offline'
+include ':adapter-fake-entry'
+include ':air-gap', ':air-gap:adapter-sound-channel', ':air-gap:adapter-video-channel', ':air-gap:adapter-video-channel:txqr', ':air-gap:adapter-nfc-channel'
+include ':air-gap:adapter-video-channel:txqr'
+
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+
+    repositories {
+        mavenCentral()
+        google()
+        // TODO: Replace with something generic for github
+        maven { url "https://github.com/omadahealth/omada-nexus/raw/master/release" }
+        maven {
+            url 'https://repo1.maven.org/maven2'
+        }
+        // Detekt
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+        google()
+        maven { url 'https://jitpack.io' }
+    }
+}

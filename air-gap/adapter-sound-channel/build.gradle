@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+
+apply from: '../../baseConfig.gradle'
+
+android {
+    namespace 'de.hartz.software.parannoying.air.gap.ggwave'
+
+    externalNativeBuild {
+        cmake {
+            path file('CMakeLists.txt')
+        }
+    }
+}
+
+tasks.named('preBuild') {
+    dependsOn tasks.named('initGgwaveSubmodule')
+}
+tasks.register('initGgwaveSubmodule', Exec) {
+    // Use providers for values and avoid referencing project/file directly
+    def ggwavePath = layout.projectDirectory.dir("src/main/cpp/ggwave")
+    def cppPath = layout.projectDirectory.dir("src/main/cpp")
+
+    // Only run if not already cloned
+    onlyIf {
+        !ggwavePath.asFile.exists()
+    }
+
+    // Clone step
+    commandLine "git", "clone", "https://github.com/ggerganov/ggwave"
+    workingDir = cppPath.asFile
+}
+
+tasks.register('checkoutGgwaveCommit', Exec) {
+    def ggwavePath = layout.projectDirectory.dir("src/main/cpp/ggwave")
+    onlyIf {
+        ggwavePath.asFile.exists()
+    }
+
+    commandLine "git", "checkout", "ef85be08cee3e11dcf2a31a58e3577e64ea836e1"
+    workingDir = ggwavePath.asFile
+}
+
+tasks.register('setupGgwave') {
+    dependsOn 'initGgwaveSubmodule', 'checkoutGgwaveCommit'
+    doLast {
+        println "ggwave submodule initialized"
+    }
+}

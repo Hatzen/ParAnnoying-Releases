@@ -1,0 +1,46 @@
+{
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    "users": {
+      ".read": false,
+      ".write": false,
+      "$userKnownEmailPrefix": {
+        "messages": {
+          // user is receiver:
+          ".read": "auth.token.email.toLowerCase().replace('@parannoying.de', '') == $userKnownEmailPrefix.toLowerCase()",
+          // Allow write when knot does not exists OR data exists and user is receiver (for deletion)
+          // https://stackoverflow.com/a/37289310/8524651
+          ".write": "(auth != null && !data.exists()) || (!newData.exists() && auth.token.email.toLowerCase().replace('@parannoying.de', '') == $userKnownEmailPrefix.toLowerCase())",
+          "$message": {
+            "data": {
+              // user is receiver:
+              ".read": "auth.token.email.toLowerCase().replace('@parannoying.de', '') == $userKnownEmailPrefix.toLowerCase()",
+              // Allow write when knot does not exists OR data exists and user is receiver (for deletion)
+              // https://stackoverflow.com/a/37289310/8524651
+              ".write": "(auth != null && !data.exists()) && newData.val().length <= 1500 || (!newData.exists() && auth.token.email.toLowerCase().replace('@parannoying.de', '') == $userKnownEmailPrefix.toLowerCase())",
+            },
+            "createdAt": {
+              ".read": "auth != null",
+              ".write": "!data.exists() && newData.exists() && auth != null || !newData.exists() && auth.token.email.toLowerCase().replace('@parannoying.de', '') == $userKnownEmailPrefix.toLowerCase()",
+            }
+          },
+        },
+        "notificationId": {
+          // Allow only authorized users. Maybe better check for emial?
+          ".read": "auth != null",
+          ".write":  "auth.token.email.toLowerCase().replace('@parannoying.de', '') == $userKnownEmailPrefix.toLowerCase()",
+        },
+        "createdAt": {
+          ".read": "auth != null",
+          ".write": "!data.exists() && newData.exists() && auth.token.email.toLowerCase().replace('@parannoying.de', '') == $userKnownEmailPrefix.toLowerCase()",
+        },
+        "lastSeen": {
+          ".read": "auth != null",
+          ".write": "newData.exists() && auth.token.email.toLowerCase().replace('@parannoying.de', '') == $userKnownEmailPrefix.toLowerCase()",
+        }
+      }
+    },
+    // no other fields can be included in main
+    "$other": { ".validate": false }
+  }
+}

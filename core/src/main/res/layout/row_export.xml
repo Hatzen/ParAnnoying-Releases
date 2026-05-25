@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/filename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Some data"
+        android:layout_margin="15dp"
+        android:textSize="20sp" >
+    </TextView>
+    <TextView
+        android:id="@+id/file_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Some note"
+        android:layout_below="@id/filename"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
+        android:textSize="14sp" >
+    </TextView>
+
+    <TextView
+        android:text="17:51  21.05.2021"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/created_at"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="12sp">
+    </TextView>
+
+    <com.mikepenz.iconics.view.IconicsImageButton
+        android:id="@+id/share"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        app:iiv_color="@color/colorAccent"
+        app:iiv_background_color="@color/transparent"
+        app:iiv_contour_color="@color/transparent"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        app:iiv_icon="faw-share"/>
+
+</RelativeLayout>

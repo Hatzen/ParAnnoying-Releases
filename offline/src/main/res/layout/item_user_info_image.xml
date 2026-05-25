@@ -1,0 +1,15 @@
+<de.hartz.software.parannoying.core.views.ShapeImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/profile_picture"
+    android:contentDescription="Profile Picture"
+    app:layout_constraintDimensionRatio="1:1"
+    android:src="@mipmap/ic_launcher_round"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:scaleType="fitCenter"
+    android:layout_gravity="center"
+    android:layout_centerInParent="true"
+    android:adjustViewBounds="true"
+    android:layout_margin="10dp"
+    />

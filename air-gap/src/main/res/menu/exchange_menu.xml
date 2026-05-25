@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu"
+    tools:context=".activities.offline.ChatOverviewActivity">
+    <!-- Online / Offline -->
+    <item
+        android:id="@+id/action_device"
+        android:orderInCategory="100"
+        android:title="Device"
+        app:showAsAction="always" />
+    <!-- Send / Receive -->
+    <item
+        android:id="@+id/action_role"
+        android:orderInCategory="100"
+        android:title="Role"
+        app:showAsAction="always" />
+    <!-- Message/ UserId/ OnlineId -->
+    <item
+        android:id="@+id/action_purpose"
+        android:orderInCategory="100"
+        android:title="Purpose"
+        app:showAsAction="always" />
+
+    <!-- TODO: id to check if actions on devices match each others -->
+    <item
+        android:id="@+id/action_usecase_id"
+        android:orderInCategory="100"
+        android:title="Usecase Id"
+        app:showAsAction="ifRoom" />
+</menu>

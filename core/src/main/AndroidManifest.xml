@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:exported="true"
+            android:name="de.hartz.software.parannoying.core.activities.insecured.SplashActivity"
+            android:taskAffinity="de.hartz.software.parannoying.core.activities.insecured.SplashActivity"
+            android:theme="@style/AppTheme.Splashscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- cannot be placed in modules needs to be in application module -->
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+        <activity
+            android:exported="true"
+            android:name="de.hartz.software.parannoying.core.activities.insecured.StartupRedirectActivity">
+        </activity>
+
+        <activity
+            android:exported="true"
+            android:name="de.hartz.software.parannoying.core.activities.CrashLogOverviewActivity">
+        </activity>
+
+        <!-- Onboarding activies are portrait only but handled related to this bug: https://stackoverflow.com/a/48072720/8524651 -->
+        <!-- SingleTop so not different onboarding instances exist at the same time -->
+        <activity
+            android:exported="false"
+            android:name="de.hartz.software.parannoying.core.activities.insecured.welcome.WelcomeActivity"
+            android:label="@string/title_activity_info"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <!-- android:launchMode="singleTop" -->
+
+        <activity
+            android:exported="true"
+            android:name="de.hartz.software.parannoying.core.activities.insecured.wiki.SideFactsActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:exported="true"
+            android:name="de.hartz.software.parannoying.core.activities.insecured.wiki.AboutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            >
+            <!-- shortcut -->
+            <intent-filter>
+                <action android:name="de.hartz.software.parannoying.ACTION_ABOUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:exported="false"
+            android:name="de.hartz.software.parannoying.core.activities.CustomPinActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:exported="false"
+            android:name=".activities.RealmMigrationActivity"
+            android:autoRemoveFromRecents="true"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <activity
+            android:exported="false"
+            android:name="de.hartz.software.parannoying.core.activities.insecured.ExitActivity"
+            android:autoRemoveFromRecents="true"
+            android:theme="@android:style/Theme.NoDisplay" />
+    </application>
+
+</manifest>

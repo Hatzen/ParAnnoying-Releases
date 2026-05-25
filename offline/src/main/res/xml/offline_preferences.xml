@@ -1,0 +1,151 @@
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="Channels">
+        <ListPreference
+            app:defaultValue="none"
+            app:entries="@array/channel_options"
+            app:entryValues="@array/channel_values"
+            app:key="main_channel"
+            app:title="Primary Channel"
+            app:useSimpleSummaryProvider="true" />
+
+        <CheckBoxPreference
+            app:title="Use auto confirmation"
+            app:key="auto_confirmation"
+            android:summary="Use auto configuration when supported (QrCodes)" />
+
+        <SwitchPreferenceCompat
+            app:key="camera"
+            app:title="Camera" />
+
+        <CheckBoxPreference
+            app:title="Add branding"
+            app:key="useBrandingPref"
+            android:summary="Draw app icon on background of QrCodes to identify them as app related." />
+
+        <SwitchPreferenceCompat
+            app:key="nfc"
+            app:title="NFC" />
+
+        <SwitchPreferenceCompat
+            app:key="bluetooth"
+            app:title="Bluetooth" />
+        <CheckBoxPreference
+            app:title="Remember last connection"
+            app:key="storeBluetooth"
+            android:summary="Device XYZ stored" />
+
+        <SwitchPreferenceCompat
+            app:key="text"
+            app:title="Text" />
+
+        <SwitchPreferenceCompat
+            app:key="sound"
+            app:title="Sound" />
+
+        <ListPreference
+            app:key="supersonic"
+            app:title="select speed and frequencies for sound"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            app:key="video"
+            app:title="QrVideo" />
+
+        <ListPreference
+            app:key="speed"
+            app:title="select size and speed for qrvideo"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            app:key="sd"
+            app:title="SD-Card" />
+
+        <ListPreference
+            app:key="folder"
+            app:title="select sd card"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Messages">
+
+        <CheckBoxPreference
+            app:title="Sync all messages"
+            app:key="sync_all"
+            android:summary="Move single messages to sync stack as well" />
+
+        <ListPreference
+            app:defaultValue="nothing"
+            app:entries="@array/security_options"
+            app:entryValues="@array/security_values"
+            app:key="messages"
+            app:title="Message security"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Security">
+
+        <CheckBoxPreference
+            app:title="Screensaver active"
+            app:key="screensaver_active"
+            android:defaultValue="true"
+            android:summary="Blur Screen after 30 seconds without interaction " />
+        <CheckBoxPreference
+            app:title="Hide App behind 'Elegant Calculator'"
+            app:key="fake_entry_activity_active"
+            android:defaultValue="false"
+            android:summary="Remove Paranoying app and add Calculator to hide app. Enter 42 to start parannoying" />
+
+        <Preference
+            app:key="pin"
+            app:title="Setup Pin"
+            app:summary="configure a pin to protect application"/>
+
+        <Preference
+            app:key="remove_pin"
+            app:title="Remove Pin"
+            app:summary="unset the pin for application protection"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Other">
+        <Preference
+            app:key="apk"
+            app:title="Download and share APK"
+            app:summary="Download the newest APK version to share it with your offline device"/>
+
+        <Preference
+            app:key="export"
+            app:title="Export all data"
+            app:summary="Create a file and store or share it to import on a new device"/>
+
+        <Preference
+            app:key="version"
+            app:title="App Version"
+            app:summary=""/>
+
+        <Preference
+            app:key="clean"
+            app:title="Clear data"
+            app:summary="Remove all data and return to clean install"/>
+
+        <Preference
+            app:key="resetOnboarding"
+            app:title="Reset introducer"
+            app:summary="Show animated tips again"/>
+
+        <Preference
+            app:key="feedback"
+            app:title="Send feedback"
+            app:summary="Report technical issues or suggest new features"/>
+
+        <Preference
+            app:key="crashlog"
+            app:title="Show crashlogs"/>
+
+    </PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library' // TODO: Core would be better to not rely on android.
+
+apply from: '../baseConfig.gradle'
+apply from: '../baseUiDependencies.gradle'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'realm-android'
+
+android {
+
+
+    androidResources {
+        noCompress 'tflite'
+    }
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+        disable 'RestrictedApi'
+    }
+    namespace 'de.hartz.software.parannoying.core'
+}
+
+dependencies {
+    //
+    //
+    // UI
+    //
+    //
+
+    implementation 'com.github.yuyakaido:CardStackView:v2.3.4'
+    implementation 'nl.dionsegijn:konfetti-xml:2.0.5'
+
+    // Filepicker.
+    api 'com.github.TutorialsAndroid:FilePicker:v8.0.19'
+
+    // Fuzzy search.
+    // api 'com.github.jens-muenker:fuzzywuzzy-kotlin:1.0.1'
+    api 'me.xdrop:fuzzywuzzy:1.4.0'
+
+    // Expandalbe cells.
+    implementation 'com.github.SysdataSpA:FancyAccordionView:1.0.0'
+
+    // Own Implementations.
+    implementation 'com.github.Hatzen:ProfilePictureGenerator:0.7.2b'
+
+    //
+    //
+    // Other
+    //
+    //
+
+}

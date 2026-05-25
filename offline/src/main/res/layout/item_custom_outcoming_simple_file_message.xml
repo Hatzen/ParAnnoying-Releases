@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="end"
+    android:layout_marginBottom="4dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginTop="4dp">
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:paddingBottom="2dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingTop="2dp"
+        app:alignContent="stretch"
+        app:alignItems="stretch"
+        app:flexWrap="wrap"
+        app:justifyContent="flex_end">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipChildren="true"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:id="@id/bubble"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.mikepenz.iconics.view.IconicsButton
+                    android:padding="10dp"
+                    android:text="Open file "
+                    android:id="@+id/open_file"
+                    android:minWidth="125dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/button_shape"
+                    android:scaleType="fitCenter"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content" />
+
+                <TextView
+                    android:id="@id/messageTime"
+                    android:text="hh:mm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/open_file"
+                    android:layout_alignRight="@id/open_file"
+                    android:layout_below="@id/open_file"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </com.google.android.flexbox.FlexboxLayout>
+</RelativeLayout>

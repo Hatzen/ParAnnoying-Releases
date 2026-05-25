@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+
+apply from: '../baseConfig.gradle'
+apply from: '../baseUiDependencies.gradle'
+
+android {
+
+    namespace 'de.hartz.software.parannoying.air.gap'
+}
+
+dependencies {
+    implementation project(':core')
+
+    implementation project(':air-gap:adapter-sound-channel')
+    implementation 'com.github.Hatzen:audio-visualizer-android:0.9.3'
+
+    implementation project(':air-gap:adapter-video-channel')
+    implementation 'com.github.bumptech.glide:glide:4.9.0' // gifs..
+
+    //
+    //
+    // UI
+    //
+    //
+
+    // Barcode scanner.
+    // implementation 'com.github.Hatzen.barcodescanner:zxing:1.9.13'
+    implementation 'com.github.Hatzen:barcodescanner:1.9.14'
+
+    // implementation 'com.yanzhenjie.zbar:zbar:1.0.0' // same as zxing but looks more effective on static non realtime data
+    // Create Barcodes.
+    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0@aar'
+    implementation project(path: ':air-gap:adapter-nfc-channel')
+}
+
+/*
+// https://stackoverflow.com/a/65036282/8524651
+configurations.all {
+    resolutionStrategy.dependencySubstitution {
+        substitute module('org.hamcrest:hamcrest-core:1.1') with module('junit:junit:4.10')
+    }
+}
+ */

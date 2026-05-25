@@ -1,0 +1,3 @@
+Spectre tricks modern processors into leaking data by exploiting how they guess upcoming tasks to run faster. Even private info from other apps can be read. It’s a hardware-level flaw that software patches only partly fix.
+ It exploits a fundamental performance feature in modern CPUs called speculative execution. This affects almost all modern processors — Intel, AMD, and ARM alike. It cannot be fixed but research started in 2018.
+ Keywords like speculative execution and side-channel attacks open up more insights.

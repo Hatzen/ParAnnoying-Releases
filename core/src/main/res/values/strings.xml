@@ -1,0 +1,28 @@
+<resources>
+    <string name="action_settings">Settings</string>
+    <string name="your_username">Your username</string>
+    <string name="username">1. Enter your username</string>
+    <string name="no_messages">no messages</string>
+    <string name="no_chats">no chats</string>
+    <string name="title_activity_info">InfoActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Shortcuts -->
+    <string name="long_shortcut_about">A little F.A.Q. to get into the app and its concept</string>
+    <string name="short_shortcut_about">About</string>
+
+    <string name="long_shortcut_sync">Sync all messages between offline and online device</string>
+    <string name="short_shortcut_sync">Sync all messages</string>
+
+    <string name="long_shortcut_userid">Show userid</string>
+    <string name="short_shortcut_userid">Generate and show a userid for other offline device to scan</string>
+</resources>

@@ -1,0 +1,6 @@
+The OnlineId is similar to your UserId. You get it displayed after onboarding your online device. Afterwards you can get it via the user menu item.
+You always having an OnlineId also when your are not using the google api and so create an offline id. This is needed for the offline Device to know whether it can send your message with the google api.
+When you want to use the google api (which is not recommended for anonymous usage of this app) it contains the information how to connect to the server. You will never ever have to show it to any online device.
+The OnlineId is only used to connect an online device with an offline device. Where both are your own.
+Dont share it with anyone. The UserId will contain the needed information after connecting your online device with your offline device while onboarding.
+It is possible to replace the online device by making a backup from your offline device.

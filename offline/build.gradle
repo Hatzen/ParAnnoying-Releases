@@ -1,0 +1,76 @@
+apply plugin: 'com.android.library'
+apply from: '../baseConfig.gradle'
+apply from: '../baseUiDependencies.gradle'
+apply plugin: 'realm-android'
+
+android {
+
+
+    androidResources {
+        noCompress 'tflite'
+    }
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+        disable 'RestrictedApi'
+    }
+    namespace 'de.hartz.software.parannoying.offline'
+}
+
+// TODO: Add android section with proper consumer and proguard paths..
+
+dependencies {
+    api project(':core')
+    implementation project(':security')
+    implementation project(':air-gap')
+
+    //Dependency 'androidx.work:work-runtime:2.10.0' requires libraries and applications that
+    //      depend on it to compile against version 35 or later of the
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
+
+    // Security
+    implementation("org.bouncycastle:bcprov-jdk18on:1.77")
+
+    // Chatviews.
+    implementation 'com.github.Hatzen:Chatkit:master-SNAPSHOT'
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+
+    // Rootdetection.v4.3.0
+    implementation 'com.scottyab:rootbeer-lib:0.0.8'
+
+    // Snackbar with progressbar.
+    implementation 'com.github.tingyik90:snackprogressbar:6.4.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+
+    //
+    // UI
+    //
+
+    // for mlkit
+    // TODO: Replace deprecaded lib
+    implementation 'com.google.firebase:firebase-ml-vision:24.0.1'
+    // for mlkit face detection
+    implementation 'com.google.firebase:firebase-ml-vision-face-model:19.0.0'
+    // for camerax
+    def camerax_version = '1.0.0-alpha06'
+    implementation "androidx.camera:camera-core:${camerax_version}"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+
+    // Images and videos.
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+
+    // Blur.
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.easing:library:1.0.0@aar'
+    implementation 'com.daimajia.androidanimations:library:1.1.2@aar'
+    implementation 'com.daimajia.androidviewhover:library:1.0.4@aar'
+
+    // needed for realm reflection for copyToRealm and get managed copies for all realmobjects.
+    // implementation 'io.reactivex.rxjava3:rxjava:3.1.8'
+    // implementation 'io.realm:android-adapters:4.0.0'
+    // implementation 'io.realm:realm-android-library:10.16.1'
+    // Core RxJava 2
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
+    // Optional: Android bindings if you use AndroidSchedulers
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+}

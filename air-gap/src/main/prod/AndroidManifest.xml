@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application>
+        <!--
+        TODO: Check if removing launch icon is working properly in prod flavour:
+            https://stackoverflow.com/q/31262389/8524651
+            https://stackoverflow.com/a/18771898/8524651
+        -->
+        <activity
+            android:name="de.hartz.software.parannoying.air.gap.activities.dummy.DummyAirGapActivity"
+            tools:replace="android:label"
+            tools:node="replace">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

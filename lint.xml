@@ -1,0 +1,51 @@
+<lint>
+
+    <!-- Android Lint: Correctness | Should pass resolved color instead of resource id -->
+    <!-- C/C++ -->
+    <issue id="all">
+        <ignore path="build" />
+        <!-- ignore editor config -->
+        <ignore path="other" />
+        <!-- Clangd errors and warnings -->
+        <ignore path="air-gap/adapter-sound-channel/src/main/cpp" />
+    </issue>
+
+
+    <!-- 🔐 SECURITY RULES: Fail the build on these -->
+    <issue id="ExportedReceiver" severity="error" />
+    <issue id="ExportedService" severity="error" />
+    <issue id="ExportedContentProvider" severity="error" />
+    <issue id="ExportedActivity" severity="error" />
+    <issue id="AllowBackup" severity="error" />
+    <issue id="InsecureBase64" severity="error" />
+    <issue id="JavascriptInterface" severity="error" />
+    <issue id="WebViewClientOnReceivedSslError" severity="error" />
+    <issue id="SetJavaScriptEnabled" severity="error" />
+    <issue id="UnsafeIntentLaunch" severity="error" />
+    <issue id="CleartextTrafficPermitted" severity="error" />
+    <issue id="CustomDebuggable" severity="error" />
+    <issue id="SignatureOrSystemPermissions" severity="error" />
+    <issue id="WorldReadableFiles" severity="error" />
+    <issue id="WorldWritableFiles" severity="error" />
+    <issue id="InvalidPackage" severity="error" />
+
+
+    <!-- ⚠️ OTHER IMPORTANT RULES AS WARNINGS -->
+    <issue id="MissingTranslation" severity="warning" />
+    <issue id="HardcodedText" severity="warning" />
+    <issue id="DuplicateIds" severity="warning" />
+    <issue id="UnusedResources" severity="warning" />
+    <issue id="TypographyQuotes" severity="warning" />
+    <issue id="ObsoleteLayoutParam" severity="warning" />
+    <issue id="LabelFor" severity="warning" />
+    <issue id="RtlEnabled" severity="warning" />
+    <issue id="SuspiciousImport" severity="warning" />
+    <issue id="GradleDependency" severity="warning" />
+
+
+    <!-- Security rules from android-security-lints -->
+    <issue id="VulnerableCryptoAlgorithm" severity="error" />
+    <issue id="UnsafeCryptoAlgorithmUsage" severity="error" />
+    <issue id="MissingAutoVerifyAttribute" severity="error" />
+    <!-- Add other rules as needed -->
+</lint>

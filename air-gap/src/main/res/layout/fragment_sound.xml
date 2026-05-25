@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorPrimary">
+
+    <com.gauravk.audiovisualizer.visualizer.BlobVisualizer
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/blob"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        custom:avDensity="0.5"
+        custom:avType="fill"
+        custom:avColor="@color/colorPrimaryDark"
+        custom:avSpeed="normal"/>
+
+    <!---
+    <com.gauravk.audiovisualizer.visualizer.BlobVisualizer
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/blob"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        custom:avDensity="0.5"
+        custom:avType="fill"
+        custom:avColor="@color/colorPrimaryDark"
+        custom:avSpeed="normal"/>
+
+    <com.gauravk.audiovisualizer.visualizer.CircleLineVisualizer
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/blob"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        custom:avDensity="0.5"
+        custom:avColor="@color/colorPrimaryDark"
+        custom:avSpeed="fast"/>
+    -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

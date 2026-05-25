@@ -1,0 +1,61 @@
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/dialogRootLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@id/dialogContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="?attr/selectableItemBackground">
+
+        <com.stfalcon.chatkit.utils.ShapeImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/dialog_avatar_width"
+            android:layout_height="@dimen/dialog_avatar_height"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:text="Name"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:textSize="16sp"
+            android:layout_margin="8dp"/>
+
+        <com.mikepenz.iconics.view.IconicsTextView
+            android:id="@+id/checked"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_gravity="center_vertical"
+            app:layout_constraintLeft_toRightOf="@id/dialogName"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="18sp"
+            app:iiv_all_size="10dp"
+            android:text="{faw-check}" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@id/dialogDividerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="@dimen/dialog_divider_margin_left"
+        android:paddingStart="@dimen/dialog_divider_margin_left">
+
+        <View
+            android:id="@id/dialogDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dialog_divider"/>
+    </FrameLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

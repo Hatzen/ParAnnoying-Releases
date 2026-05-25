@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?><!-- TODO: Rename, but activity_chat doesnt seem to work. -->
+
+<com.daimajia.androidviewhover.BlurLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/blurlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionbar_height"
+            app:title="name"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+            <com.stfalcon.chatkit.utils.ShapeImageView
+                android:id="@+id/profile_picture"
+                android:contentDescription="Profile Picture"
+                app:layout_constraintDimensionRatio="1:1"
+                android:src="@mipmap/ic_launcher_round"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_gravity="end"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_margin="10dp"/>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_below="@+id/appbar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        >
+
+        <!-- A horizontal line between the chatbox and RecyclerView -->
+        <com.stfalcon.chatkit.messages.MessagesList
+            android:id="@+id/messagesList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/layout_seperator"
+            android:layout_alignParentTop="true"
+
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+
+            app:incomingBubblePaddingBottom="0dp"
+            app:incomingBubblePaddingLeft="0dp"
+            app:incomingBubblePaddingRight="0dp"
+            app:incomingBubblePaddingTop="0dp"
+            app:outcomingBubblePaddingBottom="0dp"
+            app:outcomingBubblePaddingLeft="0dp"
+            app:outcomingBubblePaddingRight="0dp"
+            app:outcomingBubblePaddingTop="0dp"
+
+            app:incomingDefaultBubbleColor="@color/grayAccent"
+            app:incomingDefaultBubblePressedColor="@color/blue_gray"
+            app:incomingDefaultBubbleSelectedColor="@color/dark_grey_color"
+            app:outcomingDefaultBubbleColor="@color/colorPrimaryDark"
+            app:outcomingDefaultBubblePressedColor="@color/blue_gray"
+            app:outcomingDefaultBubbleSelectedColor="@color/dark_grey_color"
+            app:textAutoLink="all"/>
+
+        <View
+            android:id="@+id/layout_seperator"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#dfdfdf"
+            android:layout_marginBottom="0dp"
+            android:layout_above="@id/layout_chatbox"/>
+
+
+        <com.mikepenz.iconics.view.IconicsTextView
+            android:id="@+id/messageCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/light_gray"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/layout_chatbox"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="6 Messages" />
+        <LinearLayout
+            android:id="@+id/layout_chatbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:minHeight="48dp"
+            android:background="#ffffff"
+            android:layout_alignParentBottom="true"
+            >
+
+            <com.stfalcon.chatkit.messages.MessageInput
+                android:id="@+id/input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:inputHint="Enter Message"
+                app:showAttachmentButton="true"
+                app:attachmentButtonDefaultIconColor="@color/colorPrimary"
+                app:inputButtonDefaultBgColor="@color/colorPrimary"
+                app:inputButtonDefaultBgPressedColor="@color/colorPrimaryDark"
+                app:inputMaxLines="6"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</com.daimajia.androidviewhover.BlurLayout>

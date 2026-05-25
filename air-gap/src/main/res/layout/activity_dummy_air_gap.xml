@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/sendSingleDataButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send single Data"
+                />
+            <Button
+                android:id="@+id/sendMixedDataButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send mixed Data"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/sendEncryptedDataButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send encrypted Data"
+                />
+            <Button
+                android:id="@+id/sendFileButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send file Data"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/sendSync"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sync data send"
+                />
+            <Button
+                android:id="@+id/sendMultipleDataButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="multiple msg send"
+                />
+
+            <Button
+                android:id="@+id/sendNfc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="send NFC"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/colorAccent"
+            />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/notificationSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create Notification to start Send"
+                />
+            <Button
+                android:id="@+id/importIntent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Import intent"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/toggleAvailableChannels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All Channels"
+                />
+            <Button
+                android:id="@+id/quickLinkPermissions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Go to permissions"
+                />
+        </LinearLayout>
+
+
+        <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/colorAccent"
+            />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/receiveSync"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sync data receive"
+                />
+
+            <Button
+                android:id="@+id/receiveDataButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Receive data"
+                />
+            <Button
+                android:id="@+id/receiveNfc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Receive NFC"
+                />
+        </LinearLayout>
+        <Button
+            android:id="@+id/receiveEncryptedDataButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Receive encrypted Data"
+            />
+
+        <TextView
+            android:id="@+id/activity_result"
+            android:text="Activity Result"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorAccent"
+            />
+
+        <EditText
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:scrollHorizontally="false"
+            android:autofillHints="false"
+            android:inputType="none"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:hint="Result.."
+            android:gravity="start|top"
+            />
+    </LinearLayout>
+</ScrollView>

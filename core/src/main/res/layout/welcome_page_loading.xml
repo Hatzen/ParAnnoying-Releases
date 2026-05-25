@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/loading_element"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        >
+        <com.mikepenz.iconics.view.IconicsTextView
+            android:textColor="@color/colorWhite"
+            android:gravity="center"
+            android:textSize="24dp"
+            android:text="Registering device this may take a minute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/finished_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        >
+        <com.mikepenz.iconics.view.IconicsImageView
+            android:id="@+id/finished_checked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:iiv_color="@color/colorAccent"
+            app:iiv_icon="faw-check"
+            app:iiv_size="48dp"
+            >
+
+        </com.mikepenz.iconics.view.IconicsImageView>
+
+        <TextView
+            android:id="@+id/finished_online_element"
+            android:textColor="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:textSize="24dp"
+            android:text="Finished online registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/finished_offline_element"
+            android:textColor="@color/colorAccent"
+            android:gravity="center"
+            android:textSize="24dp"
+            android:text="Finished fake registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

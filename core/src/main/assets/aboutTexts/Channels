@@ -1,0 +1,12 @@
+Channels (a very common word but within this app special) are the way to communicate between your online device and your offline device.
+There are different channels available like Camera, NFC, Bluetooth or Text.
+<b>Camera:</b>
+is using QrCodes to transfer data. For receiving data it will show you a common camera perspective with which you have to focus a QrCode.
+For sending data it will show you a QrCode which needs to be scanned.
+<b>NFC:</b>
+NearFieldCommunication is able to transfer data the data by holding two devices backsides close to each other. For this you have to enable NFC on both devices so they can recognize each other.
+<b>Bluetooth:</b>
+Is a very common interface for transferring data in a range of ca. 5 meters. You have to activate bluetooth on both devices. The receiver has to be discoverable so the sender can see the device to send a message to.
+At first the receiver has to enable the discoverablity for 5 minutes. Then the sender can enable bluetooth and scan for discoverable bluetooth devices in the near area. Choose the receiver device by its name. The message should be delivered after wards.
+Bluetooth is the most insecure channel. As it does not need to be in a physically near range. So it is not recommended to use this channel.
+Bluetooth requires some Permissions as location as it can be used to indirectly determine your location.

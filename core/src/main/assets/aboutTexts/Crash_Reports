@@ -1,0 +1,5 @@
+The App might contain some bugs and errors so sending crash reports is needed to understand these problems. When using the app for an online device the report will be sent in a background thread via the internet. On the Offline device this is not possible.
+So when a crash occours there will be a notification which starts the data exchange activity which should exchange the data with the online device. The online device will redirect the message to the internet.
+By sending a crash report you will send some informations of your device like android version, device model etc. But these informations will not be encrypted. To be sure what will be delivered just use the text channel to prove it first.
+There will not be any private user data within the reports. It will be very efficient to understand your problem and to solve issues.
+But you may not want to release these informations to the internet so it is on you to decide where you want or can improve the app.

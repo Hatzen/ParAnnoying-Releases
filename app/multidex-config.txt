@@ -1,0 +1,2 @@
+com/google/firebase/provider/FirebaseInitProvider.class
+android/support/v4/content/FileProvider.class

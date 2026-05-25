@@ -1,0 +1,1 @@
+All messages are using a unix timestamp as a standard. But because of lack of internet connection the timestamp is interpreted in device time and timezone.

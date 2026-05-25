@@ -1,0 +1,152 @@
+name: Master CI CD
+
+on:
+  push:
+    branches:
+      - developxyz # disable on release repo
+  pull_request:
+    types: [closed]
+
+jobs:
+  UnitTest:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged || github.event_name == 'push' 
+    steps:
+      - uses: actions/checkout@v3
+      - name: set up JDK
+        uses: actions/setup-java@v3
+        with:
+          # https://github.com/ReactiveCircus/android-emulator-runner/issues/330
+          # https://github.com/actions/setup-java/issues/519 ...
+          java-version: '17'
+          distribution: 'temurin'
+      - name: make executable
+        run: chmod +x gradlew
+      - name: Unit tests
+        run: |
+          ./gradlew test
+
+  IncrementVersionCode:
+    needs: UnitTest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: echo branchname
+        run: echo "$GITHUB_REF"
+      - name: make executable
+        run: chmod +x gradlew
+      - name: increment version
+        run: ./gradlew incrementVersionCode
+      - name: Push new version to master
+        run: |
+          git config --local user.email "workflow@bot.com"
+          git config --local user.name "WorkflowBot"
+          git commit -m "Increment build version" -a
+          # git commit --amend --no-edit # Add all files to previous commit and dont edit commit message # TODO: THis doesnt work properly and resets history to only 1 commit
+          git push --force
+
+  BuildArtifacts:
+    needs: IncrementVersionCode
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: make executable
+        run: chmod +x gradlew
+      - name: Build with Gradle
+        run: ./gradlew assembleRelease -x lint
+
+      - name: Rename artifacts
+        run: |
+          cp app/build/outputs/apk/prod/release/app-prod-release.apk ParAnnoying.apk
+      - name: Upload Release
+        uses: actions/upload-artifact@master
+        with:
+          name: Release Apk
+          path: ParAnnoying.apk
+      - name: Upload Debug
+        uses: actions/upload-artifact@master
+        with:
+          name: Debug Apk
+          # TODO: File not found, probably debug is now release..
+          path: app/build/outputs/apk/dev/debug/app-dev-debug.apk
+
+  # https://dev.to/ychescale9/running-android-emulators-on-ci-from-bitrise-io-to-github-actions-3j76
+  E2ETest:
+    needs: BuildArtifacts
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        api-level: [21, 27]
+        arch: [x86]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: run tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api-level }}
+          arch: ${{ matrix.arch }}
+          disk-size: 2048M
+          script: ./gradlew connectedCheck
+
+  Deploy:
+    needs: E2ETest
+    runs-on: ubuntu-latest
+    if: github.ref == 'master'
+    steps:
+      - uses: actions/checkout@v3 # Needed for gradle file to get version information
+      - name: Get Hub
+        run: |
+          curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.1
+          cd bin
+          chmod +x hub
+          cd ..
+      - name: Get Apk
+        uses: actions/download-artifact@master
+        with:
+          name: Release Apk
+      - name: Publish
+        env:
+          GITHUB_TOKEN: "${{ secrets.RELEASE_REPO_SECRET }}"
+        run: |
+          APP_NAME=ParAnnoying
+          VERSION_NAME=`grep -oP 'versionName "\K(.*?)(?=")' ./app/build.gradle`
+          VERSION_CODE=`cat version.properties | grep "VERSION_CODE" | cut -d'=' -f2`
+          FILENAME="${APP_NAME}-v${VERSION_NAME}-${VERSION_CODE}"
+          TAG="v${VERSION_NAME}-${VERSION_CODE}"
+          TAG="latest-master"
+          echo $APP_NAME
+          echo $VERSION_NAME
+          echo $VERSION_CODE
+          echo $FILENAME
+          echo $TAG
+          git clone https://github.com/Hatzen/ParAnnoying-Releases
+          cd ParAnnoying-Releases
+          ./../bin/hub release delete "${TAG}" || echo "Failed deleting TAG: ${TAG}" # If release got lost catch error with message
+          ./../bin/hub release create -a "../${APP_NAME}.apk" -m "Current Master Build: ${FILENAME}" -p "${TAG}"
+
+  EvaluateCode:
+    needs: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Hub
+        run: |
+          echo "TDOO: Run Jacoco for coverage, and other profiling tools"

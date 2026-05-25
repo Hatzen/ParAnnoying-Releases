@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:exported="true"
+            android:name="de.hartz.software.parannoying.fake.entry.FakeEntryActivity"
+            android:label="Elegant Calculator"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_fake"
+            android:roundIcon="@mipmap/ic_launcher_fake_round"
+            android:supportsRtl="true"
+            android:taskAffinity="de.hartz.software.parannoying.fake.entry.FakeEntryActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

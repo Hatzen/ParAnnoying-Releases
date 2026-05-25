@@ -1,0 +1,137 @@
+apply plugin: 'com.android.application'
+apply from: '../baseConfig.gradle'
+
+def version=  "1.0.0a"
+
+android {
+    // https://stackoverflow.com/questions/44342455/more-than-one-file-was-found-with-os-independent-path-meta-inf-license
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+
+    flavorDimensions += "build"
+
+    // https://stackoverflow.com/a/55750291/8524651
+    productFlavors {
+        dev {
+            versionCode readVersionCode().toInteger()
+            versionName "dev-$version"
+            dimension "build"
+            applicationIdSuffix ".dev"
+            // https://stackoverflow.com/a/30879430/8524651
+            resValue "string", "app_name", "Dev-ParAnnoying"
+        }
+        prod {
+            versionCode readVersionCode().toInteger()
+            versionName "prod-$version"
+            dimension "build"
+            resValue "string", "app_name", "ParAnnoying"
+        }
+    }
+
+    androidResources {
+        noCompress 'tflite'
+    }
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+        disable 'RestrictedApi'
+    }
+    namespace 'de.hartz.software.parannoying.app'
+    defaultConfig {
+        versionCode readVersionCode().toInteger()
+        versionName version
+        applicationId "de.hartz.software.parannoying"
+        // https://stackoverflow.com/questions/39825543/didnt-find-class-com-google-firebase-provider-firebaseinitprovider
+        // Class not found Multidex; https://developer.android.com/studio/build/multidex#multidexkeepfile-property
+        multiDexKeepFile file('multidex-config.txt')
+    }
+
+
+    signingConfigs {
+        release {
+            storeFile file(RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+
+            // Optional, specify signing versions used
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            productFlavors.prod.signingConfig signingConfigs.release
+
+            signingConfig signingConfigs.release
+            shrinkResources false
+            minifyEnabled false // TODO: Shrinking is useful but currently leads to obfusicating clases and this leads to crashes..
+            // Proguard is disabled as the source will be open.
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            // TODO: Enable?
+            testCoverageEnabled false
+        }
+    }
+}
+
+dependencies {
+    implementation project(':core')
+    implementation project(':security')
+    implementation project(':air-gap')
+    implementation project(':online')
+    implementation project(':offline')
+    implementation project(':adapter-fake-entry')
+
+    implementation 'com.github.anrwatchdog:anrwatchdog:1.4.0'
+
+    // TODO: Remove by moving Activity Lifecycle Listener to core module.
+    // Lollipin. Pincode for unlocking.
+    implementation('com.github.omadahealth:lollipin:2.1.0@aar')
+
+
+    // TEST needs some transitiv dependencies..
+    // TODO: We could avoid these UI dependencies by make specific testUtils encapsulating the necessary classes (like fragments and domain chat interfaces)
+    testImplementation 'com.github.Hatzen:Chatkit:master-SNAPSHOT'
+    testImplementation 'com.github.AppIntro:AppIntro:6.2.0'
+
+    // TODO: For test there is even thereal dependencies necessary. We should manage to use the same as in baseUiDependencies
+    implementation 'com.github.Hatzen:Chatkit:master-SNAPSHOT'
+    implementation 'com.github.AppIntro:AppIntro:6.2.0'
+
+}
+
+// https://stackoverflow.com/a/21405744/8524651
+def readVersionCode () {
+    def versionPropsFile = file('../version.properties')
+
+    if (versionPropsFile.canRead()) {
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+        def code = versionProps['VERSION_CODE'].toInteger()
+        return code
+    }
+    throw new GradleException("Could not read version.properties!")
+}
+
+tasks.register("incrementVersionCode") {
+    doLast {
+        def versionPropsFile = file('../version.properties')
+        if (versionPropsFile.canRead()) {
+            Properties versionProps = new Properties()
+
+            versionProps.load(new FileInputStream(versionPropsFile))
+
+            def code = versionProps['VERSION_CODE'].toInteger() + 1
+
+            versionProps['VERSION_CODE']=code.toString()
+            versionProps.store(versionPropsFile.newWriter(), null)
+        } else {
+            throw new GradleException("Could not read version.properties!")
+        }
+    }
+}

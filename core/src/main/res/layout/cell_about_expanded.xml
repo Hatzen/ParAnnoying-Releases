@@ -1,0 +1,47 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:paddingEnd="16dp"
+    android:paddingStart="16dp">
+
+    <!-- TODO: Seperator would be nice -->
+    <!-- <View
+        android:id="@+id/border"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorPrimaryDark"/> -->
+
+    <TextView
+        android:id="@+id/sample_layout_expanded_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/black"
+        android:text="Test Title"
+        tools:text="Expanded View"/>
+
+    <TextView
+        android:id="@+id/sample_layout_expanded_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sample_layout_expanded_title"
+        android:gravity="top"
+        android:minHeight="48dp"
+        android:paddingBottom="8dp"
+        android:text="Test content"
+        android:textColor="@android:color/black"
+        tools:text="I'm an Expanded View"/>
+
+    <com.sysdata.widget.accordion.ArrowImageView
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentRight="true"
+        android:tint="@android:color/black"
+        app:expanded="true"/>
+
+</RelativeLayout>

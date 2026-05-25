@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp" >
+
+    <de.hartz.software.parannoying.core.views.ShapeImageView
+        android:id="@+id/dialogAvatar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incoming Message asasdasasd"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="0dp"
+        android:textSize="20sp"
+        android:layout_toRightOf="@id/dialogAvatar">
+    </TextView>
+
+    <com.mikepenz.iconics.view.IconicsTextView
+        android:id="@+id/dialogType"
+        android:text="{fa-users} 5"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="100dp"
+        android:layout_marginEnd="5dp"
+        android:textSize="12sp"
+        android:layout_below="@id/label"
+        android:layout_toRightOf="@id/dialogAvatar">
+    </com.mikepenz.iconics.view.IconicsTextView>
+
+    <com.mikepenz.iconics.view.IconicsTextView
+        android:visibility="invisible"
+        android:text="17:51  21.05.2021"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/delivered_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="100dp"
+
+        android:layout_below="@id/label"
+        android:layout_toLeftOf="@id/outbox_time"
+        android:layout_marginEnd="10dp"
+        android:textSize="12sp">
+    </com.mikepenz.iconics.view.IconicsTextView>
+
+    <com.mikepenz.iconics.view.IconicsTextView
+        android:text="17:51  21.05.2021"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/outbox_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="100dp"
+
+        android:layout_below="@id/label"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"
+        android:textSize="12sp">
+    </com.mikepenz.iconics.view.IconicsTextView>
+
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- file paths for sharing content from this app -->
+    <!-- additional force matching root... -->
+    <external-path name="test" path="/data/data/de.hartz.software.parannoying/cache/Pictures/" />
+    <external-path name="test2" path="/data/user/0/de.hartz.software.parannoying/cache/Pictures" />
+    <external-path name="test3" path="/data/data/de.hartz.software.parannoying.dev/cache/Pictures/" />
+
+    <external-path
+        name="my_images"
+        path="." />
+    <!-- additional force matching root... -->
+    <external-path name="gallery_images" path="Android/data/${packageName}/files/Pictures" />
+    <external-path name="external_files" path="." /> <!-- see https://stackoverflow.com/a/38858040 -->
+    <files-path name="history_images" path="history/" />
+</paths>

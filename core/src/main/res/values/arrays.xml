@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string-array name="channel_options">
+        <item>Camera</item>
+        <item>NFC</item>
+        <item>Bluetooth</item>
+        <item>Text</item>
+        <item>Sound</item>
+        <item>Video</item>
+        <item>SD-Card</item>
+        <item>None</item>
+    </string-array>
+
+    <string-array name="channel_values">
+        <item>camera</item>
+        <item>nfc</item>
+        <item>bluetooth</item>
+        <item>text</item>
+        <item>sound</item>
+        <item>video</item>
+        <item>sd-card</item>
+        <item>none</item>
+    </string-array>
+
+
+    <string-array name="security_options">
+        <item>Show all Messages</item>
+        <item>Hide old messages behind stars</item>
+        <item>Dont persist any Message</item>
+    </string-array>
+    <string-array name="security_values">
+        <item>nothing</item>
+        <item>hide</item>
+        <item>clear</item>
+    </string-array>
+
+
+    <string-array name="video_speed_options">
+        <item>Slow large QR Codes</item>
+        <item>Medium speed, medium QR Codes</item>
+        <item>Fast tiny QR Codes</item>
+    </string-array>
+    <string-array name="video_speed_values">
+        <item>slow</item>
+        <item>normal</item>
+        <item>fast</item>
+    </string-array>
+
+
+    <string-array name="sound_options">
+        <item>Audible normal</item>
+        <item>Audible faster</item>
+        <item>Audible fastest</item>
+        <item>Ultrasonic normal</item>
+        <item>Ultrasonic faster</item>
+        <item>Ultrasonic fastest</item>
+        <item>Dual Tone normal</item>
+        <item>Dual Tone faster</item>
+        <item>Dual Tone fastest</item>
+    </string-array>
+
+    <string-array name="sound_values">
+        <item>audible_normal</item>
+        <item>audible_fast</item>
+        <item>audible_fastest</item>
+        <item>ultrasound_normal</item>
+        <item>ultrasound_fast</item>
+        <item>ultrasound_fastest</item>
+        <item>dt_normal</item>
+        <item>dt_fast</item>
+        <item>dt_fastest</item>
+    </string-array>
+
+</resources>

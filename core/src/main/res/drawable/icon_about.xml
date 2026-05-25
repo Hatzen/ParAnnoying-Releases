@@ -1,0 +1,10 @@
+<!-- Cannot be used for shortcuts or similar -->
+<com.mikepenz.iconics.IconicsDrawable
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:ico_icon="faw_info"
+    app:ico_color="@color/colorAccent"
+    app:ico_contour_width="1dp"
+    app:ico_contour_color="@color/colorPrimaryDark"
+    app:ico_size="24dp"
+    tools:targetApi="n" />

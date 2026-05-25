@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/colorPrimary">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mounted"
+        android:text="Mounted"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_shape"
+        android:scaleType="fitCenter"
+        android:textColor="@color/colorWhite"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/createdAt"
+        android:text="Created at"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_shape"
+        android:scaleType="fitCenter"
+        android:textColor="@color/colorWhite"/>
+
+</LinearLayout>

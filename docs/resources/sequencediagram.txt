@@ -1,0 +1,124 @@
+title ParAnnyoing Sequences
+// https://sequencediagram.org/#
+
+actor User1
+participant DeviceOff1
+participant DeviceOff1.1
+participant DeviceOn1
+participant DeviceOn1.1
+participant Internet/Medium/GoogleApi
+participant DeviceOn2
+participant DeviceOff2
+actor User2
+
+// TODO maybe better parallel parallel off onboarding1 and 2
+// Onboarding 1
+User1->DeviceOff1: Onboarding
+activate DeviceOff1
+User1->DeviceOn1: Onboarding
+activate DeviceOn1
+DeviceOff1->DeviceOn1: Scan onlineId or default
+deactivate DeviceOn1
+deactivate DeviceOff1
+
+// Onboarding 2
+User2->DeviceOff2: Onboarding
+activate DeviceOff2
+User2->DeviceOn2: Onboarding
+activate DeviceOn2
+DeviceOff2->DeviceOn2: Scan onlineId or default
+deactivate DeviceOn2
+deactivate DeviceOff2
+
+// Add User 2
+User1->DeviceOff1: Add User
+activate DeviceOff1
+User2->DeviceOff2: Show UserId
+activate DeviceOff2
+DeviceOff1->DeviceOff2: Scan UserId
+deactivate DeviceOff2
+DeviceOff1->User1: (Enter password) \n and User added
+deactivate DeviceOff1
+
+// Add User 1
+User2->DeviceOff2: Add User
+activate DeviceOff2
+User1->DeviceOff1: Show UserId
+activate DeviceOff1
+DeviceOff2->DeviceOff1: Scan UserId
+deactivate DeviceOff1
+DeviceOff2->User2: (Enter password) \n and User added
+deactivate DeviceOff2
+
+loop Exchanging Messages
+alt Sending and Receiving messages from both sides
+// User 1 write message User 2
+User1->DeviceOff1: Write Message to User2
+activate DeviceOff1
+DeviceOff1->DeviceOff1: Encrypt Message and show \nActivtiy for scanning
+activate DeviceOn1
+User1->DeviceOn1: Scan Message
+DeviceOn1->DeviceOff1: Scan Message
+deactivate DeviceOff1
+DeviceOn1->Internet/Medium/GoogleApi: Send Message
+deactivate DeviceOn1
+activate Internet/Medium/GoogleApi
+Internet/Medium/GoogleApi->DeviceOn2: Send Message
+deactivate Internet/Medium/GoogleApi
+activate DeviceOn2
+DeviceOn2->User2: Notify new Message arrived
+
+note left of User2: User is busy
+deactivate DeviceOn2
+
+activate DeviceOff2
+User2->DeviceOff2: Scan Message
+activate DeviceOn2
+User2->DeviceOn2: Show Message
+DeviceOff2->DeviceOn2: Scan Message
+deactivate DeviceOn2
+User2->DeviceOff2: Read Message
+deactivate DeviceOff2
+end
+end
+// End User 1 write message User 2
+
+// Create new online device
+opt Replace Online Device
+destroy DeviceOn1
+create DeviceOn1.1
+User1->DeviceOn1.1: Onboarding
+activate DeviceOn1.1
+User1->DeviceOff1: Setup new OnlineId\n => new UserId (same keys)
+activate DeviceOff1
+DeviceOff1->DeviceOn1.1: Scan OnlineId
+DeviceOn1.1->Internet/Medium/GoogleApi: TODO:\nNotify all known users\n about new OnlineId\n via Message
+deactivate DeviceOn1.1
+deactivate DeviceOff1
+end
+
+// Create new offline device
+opt Replace Offline Device
+activate DeviceOff1
+DeviceOff1->User1: Export all Data to file
+deactivate DeviceOff1
+create DeviceOff1.1
+destroy DeviceOff1
+activate DeviceOff1.1
+User1->DeviceOff1.1: Export all Data to file
+deactivate DeviceOff1.1
+end
+
+// Update device
+opt Update Devices
+activate Internet/Medium/GoogleApi
+Internet/Medium/GoogleApi->DeviceOn1.1: Update available.
+deactivate Internet/Medium/GoogleApi
+activate DeviceOn1.1
+DeviceOn1.1->User1: Update available. Download and share it
+DeviceOn1.1->DeviceOn1.1: Update
+deactivate DeviceOn1.1
+activate DeviceOff1.1
+User1->DeviceOff1.1: Update
+deactivate DeviceOff1.1
+end

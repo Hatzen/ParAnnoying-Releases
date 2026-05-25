@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+
+apply from: '../../baseConfig.gradle'
+
+android {
+    namespace 'de.hartz.software.parannoying.air.gap.txqr'
+
+}
+
+dependencies {
+    implementation project(':air-gap:adapter-video-channel:txqr')
+
+
+    // TODO: update,unify with qrcode scanner (adapter?) and replace/ remove as libs are not supported anymore?
+    // Barcode scanner.
+    implementation 'com.github.Hatzen:barcodescanner:1.9.14'
+    // implementation 'com.yanzhenjie.zbar:zbar:1.0.0' // same as zxing but looks more effective on static non realtime data
+    // Create Barcodes.
+    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0@aar'
+
+}

@@ -1,0 +1,8 @@
+There can be multiple reasons a device is not recognizing the qrcode you want to scan. In general qrcodes which are just a photo and not the original one may not be scanned.
+If you made a photo of an qrcode and try to import it probably might not be recognized.
+Scanning relies hardly on data over time so try scanning it with your camera.
+Scanning with the camera can also be very hard some times. As your camera might be old or the qrcode contains many data and it gets very small on old devices display. It can take about 1 minute for the app to recognized the qrcode.
+Make sure the light is sufficient and try other places to scan the code.
+Hold the camera like 10 cm away from the QrCode then slowly move close to the code and back to a distance more far away like 30 to 50 cm.
+Repeat this for ca. 1 minute with different acceleration.
+Also try to learn from the indicator which should be mostly green. Even it only tells you it found some feature points but its not scanned completely yet.

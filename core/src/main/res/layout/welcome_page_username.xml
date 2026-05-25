@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/welcomeText"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:text="Test"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="35dp"
+        android:layout_above="@+id/username">
+
+    </androidx.appcompat.widget.AppCompatTextView>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/username"
+        android:textColor="@color/colorWhite"
+        android:foregroundTint="@color/colorWhite"
+        android:backgroundTint="@color/grayAccent"
+        android:layout_marginTop="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=""
+        android:autofillHints=""
+        android:inputType="text"
+        android:layout_margin="35dp"/>
+
+
+</RelativeLayout>

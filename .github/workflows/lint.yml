@@ -1,0 +1,23 @@
+name: Lint
+
+on:
+  push:
+    branches:
+      - lint # Dont run lint as long as it failing for sure. To keep needed capacitiy for actions.
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    - name: make executable
+      run: chmod +x gradlew
+    - name: Lint with Gradle
+      run: ./gradlew lintRelease

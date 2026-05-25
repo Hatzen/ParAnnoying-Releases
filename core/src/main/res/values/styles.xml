@@ -1,0 +1,58 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <!-- Avoid showing icon AND animation; Maybe its easier to design via splashscreen: https://developer.android.com/training/wearables/apps/splash-screen-->
+    <style name="AppTheme.Splashscreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- https://stackoverflow.com/a/77436260/8524651 -->
+        <item name="android:windowDisablePreview">true</item>
+        <!-- This seems to cause issues with orientation see SO-->
+        <item name="android:windowIsTranslucent">true</item>
+
+        <!-- https://stackoverflow.com/a/41693399/8524651 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <item name="android:windowBackground">@color/colorWhite</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="textBoldLight">
+        <item name="android:textColor">@color/grayAccent</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:shadowColor">@color/colorAccent</item>
+        <!-- <item name="android:shadowDx">1dp</item>
+        <item name="android:shadowDy">1dp</item> -->
+    </style>
+
+    <!-- Possible Dialog theme -->
+    <style name="ThemeDialogCustom" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Style for having app colors within dialog -->
+    <style name="AlertDialog" parent="Base.Theme.AppCompat.Light.Dialog">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
+        <item name="android:colorAccent" tools:targetApi="lollipop">@color/colorAccent</item>
+    </style>
+
+</resources>

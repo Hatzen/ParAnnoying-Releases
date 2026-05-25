@@ -1,0 +1,2 @@
+Hardware encryption is a feature supported by android to safe your persisted data. So any file you saved is encrypted and can only be read when the device is sharing it via adb or by the user.
+It is highly recommended to use this feature. Because as long as the device is turned off a hacker cannot access any of your private data via computer connection or a factory reset.

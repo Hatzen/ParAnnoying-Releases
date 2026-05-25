@@ -1,0 +1,4 @@
+The Userimage is generated with a specific seed which should be mostly unique for every user. But it might be the same image for different users.
+The user image uses a traffic light color system to display security issues. An image with red color should not be trusted also the conversation might be still secure.
+There are different reasons for the color to change, as Bluetooth or using old android devices will make your device less secure.
+Also old app versions might be considered as insecure. It is just an indicator to collect possibilities which might make the conversation insecure.

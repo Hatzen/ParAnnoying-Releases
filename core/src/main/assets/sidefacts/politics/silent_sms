@@ -1,0 +1,3 @@
+Silent SMS (also called “stealth ping” or “stealth SMS”) is a type of message sent to a mobile phone that doesn’t alert the user—no notification, sound, or visible message. But the phone still processes it, allowing the sender (usually law enforcement or intelligence agencies) to confirm the phone is on, connected, and often to estimate location through the cellular network.
+
+This works because mobile networks track the signal path to deliver the message. Silent SMS can be used to trigger a location update without needing GPS access. If the device is offline or isolated from networks (like in an air-gapped environment), this tracking method fails.

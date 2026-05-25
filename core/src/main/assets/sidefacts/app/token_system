@@ -1,0 +1,1 @@
+A reply does more than continue a chat—it confirms the message was received and understood. That moment can trigger a new encryption key, breaking the link to past messages. Without a reply, the same key may be reused too long. Changing keys often keeps conversations safer and harder to trace or decode over time.

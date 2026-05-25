@@ -1,0 +1,27 @@
+This app relies hardly on the kerkhoffs principle, which basically says the safety of encryption relies only on keeping the key as a secret. That is why one device has to stay offline, so no one not even a trojan can pass it to anyone.
+The technique of Trojans is to hack your device on a very low level without you knowing it. When thats achieved all your data can be read and delivered to any location.
+The german government confirms this technique for observing WhatsApp messages of potential terrorists.
+Also the messages have a cascading encryption architecture as recommended by the NSA: https://en.wikipedia.org/wiki/Multiple_encryption
+Also some further security mechanisms are used to work against bruteforce attacks. Some whitepaper may be available on the github release repo in the future.
+
+1) confidentiality
+The real message content can only be decrypted by
+2) integrity
+The integrity is provided by a Checksum. But also by encryption. An attacker would need to know the whole userid and all delivered messages to modify a message.
+3) availability
+The availability is not directly granted. The firebase (google api) infrastructure is weak and can be disabled with DDOS Attacks. Therefore this messenger does not rely on that channel only.
+As any messenger might be restricted by governments choice.
+It is Recommended to use BRIAR for forwarding messages to users and groups as it grants more anonymization and is reliable.
+4) authenticity
+The integrity is provided by a HMAC. But also by encryption. An attacker would need to know the whole userid and all delivered messages to write a message.
+5) non repudiation
+Not relevant/ Not given.
+6) accountability
+The accountability is provided by the combination of the OnlineId and keys. The onlineId is used to identify a user, but messages are applied to that user only when encrypting with keys provided by their userId is working.
+7) anonymity
+In general we do not connect any private user data to the messages or registered users. Even not for using google api. But when using google api, google can most probably say which person are communicating with each other.
+As the online device will use the google account for downloading apps, so the real name and credit card information are connected to it. And firebase will be used by the play store as well. So the online devices ip adress is known and can be connected to that google account.
+This will probably also happen when using other messaging apps. BRIAR and its way to use mesh networks might be a better option but less reliable.
+8) resilience
+This app is secured by heavy encryption, trojan safety (as much as possible) and physical accessibility. The user have to care about every point additionally to reduce the risk of leaks.
+Social engineering is the dangerous part where we try to keep you informed by documentation.

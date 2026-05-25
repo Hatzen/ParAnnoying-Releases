@@ -1,0 +1,65 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.google.gms.google-services'
+apply from: '../baseConfig.gradle'
+apply from: '../baseUiDependencies.gradle'
+apply plugin: 'realm-android'
+apply plugin: 'com.google.gms.google-services'
+
+
+android {
+
+    flavorDimensions += "build"
+
+    // https://stackoverflow.com/a/55750291/8524651
+    productFlavors {
+        dev {
+            dimension "build"
+        }
+        prod {
+            dimension "build"
+        }
+    }
+
+    androidResources {
+        noCompress 'tflite'
+    }
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+        disable 'RestrictedApi'
+    }
+    namespace 'de.hartz.software.parannoying.online'
+}
+
+dependencies {
+    implementation project(':core')
+    implementation project(':air-gap')
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:32.2.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+
+    /*
+    implementation 'com.google.firebase:firebase-core'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-functions'
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation "com.google.firebase:firebase-iid"
+    // TODO: Remove if possible
+     */
+    implementation 'com.google.firebase:firebase-core:20.1.2'
+    // Pushmessages.
+    implementation 'com.google.firebase:firebase-functions:20.0.2'
+    // Auth.
+    implementation 'com.google.firebase:firebase-auth:21.0.3'
+    implementation 'com.google.firebase:firebase-database:20.0.4'
+    // Notifications.
+    implementation 'com.google.firebase:firebase-messaging:23.0.3'
+    implementation "com.google.firebase:firebase-iid:21.1.0"
+
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.2.0'
+}
