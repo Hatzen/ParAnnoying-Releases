@@ -11,23 +11,27 @@ As well as there are still big features which have to be finished or fixed.
 - many features arent tested completely
 - many dependencies are outdated and might not work with newer android versions
 
+Some diagrams and german whitepaper can be found here
+https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/german/whitepaper.md
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/resources/sequencediagram.svg?raw=true">
+
 
 # Some impressions of the current version
 
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/1.png?raw=true">
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/2.png?raw=true">
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/3.png?raw=true">
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/4.png?raw=true">
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/5.png?raw=true">
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/6.png?raw=true">
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/7.png?raw=true">
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/8.png?raw=true">
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/9.png?raw=true">
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/10.png?raw=true">
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/11.png?raw=true">
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/12.png?raw=true">
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/13.png?raw=true">
-<img src="https://github.com/Hatzen/ParAnnoying-Releases/tree/master/docs/img/14.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/1.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/2.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/3.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/4.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/5.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/6.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/7.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/8.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/9.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/10.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/11.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/12.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/13.png?raw=true">
+<img src="https://github.com/Hatzen/ParAnnoying-Releases/blob/master/docs/img/14.png?raw=true">
 
 # Other
 The code ist free to use with legal notice of its source. It would be charming to see it finished and realeased some day, so setting up this repo to work properly as well as start again with 3.0 version would be fine.
